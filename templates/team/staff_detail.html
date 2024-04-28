@@ -1,0 +1,252 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+
+<section class="page_breadcrumbs ds parallax section_padding_top_65 section_padding_bottom_65">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12 text-center">
+				<h2 class="highlight bold">Team Members</h2>
+				<ol class="breadcrumb to_animate animated pulse" data-animation="pulse"
+					data-delay="150">
+				<li><a href="{% url 'home' %}"><i class="fa fa-home"></i> Home</a>	</li>
+					<li><a href="{% url 'organization_worker' %}"><i class="fa fa-user-plus"> Meet Our Team</i></a></li>
+					<li class="active"><i class="fa fa-user"> Team Members</i></li>
+				</ol>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="ls section_padding_top_100 section_padding_bottom_100">
+	<div class="container">
+
+		<div class="row">
+			<div class="col-md-5">
+
+				<div class="text-center">
+					<img src="{{ staff_detail.image.url }}" alt="">
+					<h2>{{ staff_detail.first_name }} {{ staff_detail.last_name }}</h2>
+					<p class="small-text highlight">{{ staff_detail.worker_title }}</p>
+					<p class="social-icons">
+			<a class="social-icon color-icon soc-facebook" href="#" title="" data-toggle="tooltip" data-original-title="Facebook"></a>
+			<a class="social-icon color-icon soc-twitter" href="#" title="" data-toggle="tooltip" data-original-title="Twitter"></a>
+			<a class="social-icon color-icon soc-google" href="#" title="" data-toggle="tooltip" data-original-title="Google"></a>
+		</p>
+				</div>
+
+				<ul class="list1 no-bullets topmargin_40">
+					<li>
+						<div class="media small-teaser">
+							<div class="media-left">
+								<div class="highlight size_small">
+									<i class="rt-icon2-location-outline"></i>
+								</div>
+							</div>
+							<div class="media-body">
+								<h4 class="media-heading">Home Address:</h4>
+
+								{{ staff_detail.address_line_1 }}, {{ staff_detail.address_line_2 }}, {{ staff_detail.city }},
+                <strong>{{ staff_detail.state }}, {{ staff_detail.country }}.</strong><br />
+							</div>
+						</div>
+					</li>
+
+					<li>
+						<div class="media small-teaser">
+							<div class="media-left">
+								<div class="highlight size_small">
+									<i class="rt-icon2-phone-outline"></i>
+								</div>
+							</div>
+							<div class="media-body">
+								<h4 class="media-heading">Phone Number:</h4>
+								{{ staff_detail.phone_number }}
+							</div>
+						</div>
+					</li>
+
+					<li>
+						<div class="media small-teaser">
+							<div class="media-left">
+								<div class="highlight size_small">
+									<i class="rt-icon2-printer2"></i>
+								</div>
+							</div>
+							<div class="media-body">
+								<h4 class="media-heading">Fax:</h4>
+								+65 432 123 4567
+							</div>
+						</div>
+					</li>
+
+					<li>
+						<div class="media small-teaser">
+							<div class="media-left">
+								<div class="highlight size_small">
+									<i class="rt-icon2-mail2"></i>
+								</div>
+							</div>
+							<div class="media-body greylinks underlined-links">
+								<h4 class="media-heading">Email Address:</h4>
+								<a href="mailto:your@mail.com">{{ staff_detail.email }}</a>
+							</div>
+						</div>
+					</li>
+
+					<li>
+						<div class="media small-teaser">
+							<div class="media-left">
+								<div class="highlight size_small">
+									<i class="rt-icon2-globe-outline"></i>
+								</div>
+							</div>
+							<div class="media-body greylinks">
+								<h4 class="media-heading">Website:</h4>
+								<a href="#">mywebsite.com</a>
+							</div>
+						</div>
+					</li>
+
+
+				</ul>
+
+			</div>
+
+			<div class="col-md-6 col-md-offset-1">
+				<h2 class="entry-title">Meet Our Member!</h2>
+
+				<p>{{ single_member.about }}	</p>
+				<ul class="list1 darklinks">
+					<li>
+						<a href="services.html">Lorem ipsum dolor sit amet</a>
+					</li>
+					<li>
+						<a href="services.html">Sint animi non ut sed</a>
+					</li>
+					<li>
+						<a href="services.html">Eaque blanditiis nemo</a>
+					</li>
+					<li>
+						<a href="services.html">Amet, consectetur adipisicing</a>
+					</li>
+					<li>
+						<a href="services.html">Blanditiis nemo quaerat</a>
+					</li>
+				</ul>
+
+
+				<!-- Nav tabs -->
+				<ul class="nav nav-tabs topmargin_40" role="tablist">
+					<li class="active"><a href="#tab1" role="tab" data-toggle="tab">Biography</a></li>
+					<li><a href="#tab2" role="tab" data-toggle="tab">Skills</a></li>
+					<li><a href="#tab3" role="tab" data-toggle="tab">Send Message</a></li>
+				</ul>
+
+				<!-- Tab panes -->
+				<div class="tab-content top-color-border bottommargin_30">
+
+					<div class="tab-pane fade in active" id="tab1">
+						<h3 class="topmargin_0">Biography:</h3>
+						<p>
+				Ut wisi enim ad minim veniaquis nostrud exetation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Dutem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit.
+			</p>
+						<h3>Professional Life:</h3>
+						<p>
+				Dutem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit. Praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
+			</p>
+
+					</div>
+
+					<div class="tab-pane fade" id="tab2">
+						<p>
+				<strong class="grey">Skill Name</strong>
+			</p>
+						<div class="progress">
+							<div class="progress-bar progress-bar-success" role="progressbar" data-transitiongoal="90">
+								<span>90%</span>
+							</div>
+						</div>
+
+						<p>
+				<strong class="grey">Skill Name</strong>
+			</p>
+						<div class="progress">
+							<div class="progress-bar progress-bar-success" role="progressbar" data-transitiongoal="100">
+								<span>100%</span>
+							</div>
+						</div>
+
+						<p>
+				<strong class="grey">Skill Name</strong>
+			</p>
+						<div class="progress">
+							<div class="progress-bar progress-bar-success" role="progressbar" data-transitiongoal="75">
+								<span>75%</span>
+							</div>
+						</div>
+
+						<p>
+				<strong class="grey">Skill Name</strong>
+			</p>
+						<div class="progress">
+							<div class="progress-bar progress-bar-success" role="progressbar" data-transitiongoal="95">
+								<span>95%</span>
+							</div>
+						</div>
+
+
+					</div>
+
+					<div class="tab-pane fade" id="tab3">
+						<form class="contact-form" method="post" action="./">
+							<p class="contact-form-name">
+					<!-- <label for="name">Name <span class="required">*</span></label> -->
+					<input type="text" aria-required="true" size="30" value="" name="name" class="form-control" placeholder="Name">
+				</p>
+							<p class="contact-form-email">
+					<!-- <label for="email">Email <span class="required">*</span></label> -->
+					<input type="email" aria-required="true" size="30" value="" name="email" class="form-control" placeholder="Email">
+				</p>
+							<p class="contact-form-message">
+					<!-- <label for="message">Message</label> -->
+					<textarea aria-required="true" rows="8" cols="45" name="message" class="form-control" placeholder="Message"></textarea>
+				</p>
+							<p class="contact-form-submit topmargin40">
+					<button type="submit" name="contact_submit" class="theme_button">Send Message</button>
+				</p>
+						</form>
+					</div>
+				</div>
+				<!-- eof .tab-content -->
+
+				<p>
+		Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet rem ipsum dolorsit amet consetetur sadipscing elitr sed diam nonumy eirmod tempor invidunt.
+	</p>
+
+				<blockquote class="with_quote text-center">
+					Ground round tenderloin alcatra, chicken landjaeger kevin short ribs ham hock pork chop. Bresaola capicola brisket shankle shank, strip steak burgdoggen. Pig tenderloin frankfurter porchetta.
+					<div class="item-meta">
+						<h5>
+							<a href="#">Simon Green</a>
+						</h5>
+						<p>Church Visitor</p>
+					</div>
+				</blockquote>
+
+				<p>
+		Ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+	</p>
+
+			</div>
+
+
+		</div>
+	</div>
+	<hr>
+
+</section>
+
+{% endblock %}

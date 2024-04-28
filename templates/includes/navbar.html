@@ -1,0 +1,109 @@
+{% load static %}
+
+<!--------------------------------------------- navbar section ------------------------------------------------->
+<!-- <div class="topbar orange2 topbar-padding">
+  <div class="container">
+    <div class="topbar-left-items">
+      <ul class="toplist toppadding pull-left paddtop1">
+        <li class="rightl">Customer Care</li>
+        <li>(888) 123-4567</li>
+      </ul>
+    </div> -->
+    <!--end left-->
+<!--
+    <div class="topbar-right-items pull-right">
+      <ul class="toplist toppadding">
+        <li class="lineright"><a href="#">Login</a></li>
+        <li class="lineright"><a href="#">Register</a></li>
+        <li><a href="#" class="social-icon color-icon border-icon rounded-icon soc-facebook"></a></li>
+        <li><a href="#" class="social-icon color-icon border-icon rounded-icon soc-youtube"></a></li>
+        <li class="last"><a href="#" class="social-icon color-icon border-icon rounded-icon soc-instagram"></a></li>
+   </ul>
+ </div>
+</div>
+</div> -->
+<!---------------------------------------------- End of Navbar Section -------------------------------------------------->
+
+<header class="page_header header_white toggler_right with_bottom_border_container">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12  display_table">
+        <div class="header_left_logo display_table_cell">
+          <img src="{{ church.logo.url }}" alt="logo" class="logo top_logo">
+            <a href="{% url 'home' %}"  <span class="logo_text">
+                <strong class="playfair">{{ church.organization_name }}</strong>
+              </span>
+            </a>
+        </div>
+
+        <div class="header_mainmenu display_table_cell text-right">
+          <!-- main nav start -->
+          <nav class="mainmenu_wrapper">
+            <ul class="mainmenu nav sf-menu">
+              <li class=""> <a href="{% url 'home' %}">Home</a>  </li>
+
+              <!-- about -->
+              <li><a href="{% url 'organization' %}">About Us</a>  </li>
+              <!-- eof about -->
+
+              <!-- giving -->
+              <li><a href="blog-right.html">Giving</a>  </li>
+              <!-- eof giving -->
+
+              <!-- activities -->
+              <!-- <li><a href="{% url 'home' %}" class=" {% if request.path == activities %} active {% endif %}" >Activities</a>  </li> -->
+              <li>
+                <a href="#">Activities</a>
+                <ul>
+                  <!-- testimony -->
+                  <li><a href="{% url 'testimony' %}">Testimony</a>  </li>
+                  <!-- eof testimony -->
+                </ul>
+              </li>
+              <!-- eof activities -->
+
+              <!-- features -->
+              <li>
+                <a href="#">Features</a>
+                <ul>
+                  <!-- gallery -->
+                  <li><a href="{% url 'gallery' %}">Gallery</a>  </li>
+                  <!-- eof gallery -->
+
+                  <!-- blog -->
+                  <li><a href="{% url 'blog' %}" >Blog</a>  </li>
+                  <!-- eof blog -->
+
+                  <!-- meet our team -->
+                  <li><a href="{% url 'organization_worker' %}">Meet Our Team</a>  </li>
+                  <!-- eof meet our team -->
+
+                  <!-- sermons -->
+                  <li><a href="blog-right.html">Sermons</a>  </li>
+                  <!-- eof sermons -->
+
+                  <!-- contact -->
+                  <li><a href="{% url 'contact' %}" class="{% if request.path == contact %} active {% endif %}" >Contact Us</a></li>
+                  <!-- eof contact -->
+                </ul>
+              </li>
+              <!-- eof features -->
+
+            </ul>
+          </nav>
+          <!-- eof main nav -->
+
+          <!-- header toggler -->
+
+          <span class="toggle_menu">
+            <span></span>
+          </span>
+
+        </div>
+
+        </div>
+      </div>
+
+  </div>
+</header>
+<!-------------------------- eof navbar section ----------------------------------->

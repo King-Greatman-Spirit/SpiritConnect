@@ -1,0 +1,272 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<section class="page_breadcrumbs ds parallax section_padding_top_65 section_padding_bottom_65">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12 text-center">
+				<h2 class="highlight bold">The Article</h2>
+				<ol class="breadcrumb o_animate animated pulse" data-animation="pulse"
+					data-delay="150">
+					<li><a href="{% url 'home' %}"><i class="fa fa-home"></i> Home</a>	</li>
+						<li class="active"><a href="{% url 'blog' %}"><i class="fa fa-newspaper-o"></i> From Our Blog</a></li>
+						<li class="active"><i class="fa fa-pencil"></i> The Article</li>
+				</ol>
+			</div>
+			</div>
+		</div>
+</section>
+
+<section class="ls section_padding_top_100 section_padding_bottom_100 columns_padding_25">
+	<div class="container">
+		<div class="row">
+
+			<div class="col-sm-7 col-md-8 col-lg-8">
+
+				<article class="single-post vertical-item with_background">
+					<div class="entry-thumbnail item-media">
+						<img  src="{{ article.image.url }}" alt="">
+					</div>
+					<div class="item-content">
+						<div class="with_padding">
+							<header class="entry-header">
+								<h1 class="entry-title highlight text-center">{{ article.article_title }}</h1>
+							</header>
+							<!-- .entry-header -->
+
+	          {% for paragraph in paragraphs %}
+						<h4 class="entry-title  highlight text-left">{{ paragraph.paragraph_title }}</h4>
+						<!-- paragragh image -->
+						<img class="alignleft" alt="" src="{{ paragraph.paragraph_image.url }}">
+
+	            <h5 class="less-mar3 text-justify">{{ paragraph.paragraph_content}}</h5>
+
+	            <!-- <p>{{ phrase }}</p> -->
+
+	            <br/>
+	          {% endfor %}
+
+							<div class="entry-content">
+						<!-- <blockquote class="text-center with_quote"> -->
+							<!-- <div class="item-meta">
+								<h5 class="highlightlinks"><a href="#">Simon Green</a></h5>
+								<p>Church Visitor</p>	</div>	</blockquote> -->
+
+							</div>
+							<!-- .entry-content -->
+						</div>
+
+						<footer class="with_top_border entry-meta highlightlinks">
+							<div class="content-justify">
+								<span class="entry-date highlight">
+									<time class="entry-date" datetime="2017-03-13T08:50:40+00:00">
+										{{ article.created_date|date:"M" }} <span>{{ article.created_date|date:"d, Y" }}</span>
+									</time>
+								</span>
+									<div class="blog-post-info capitalize highlight">
+										<span><i class="fa fa-user"></i>
+										By
+										{% for author in article.article_author.all %}
+												{% if not forloop.first %}, {% endif %}
+												{{ author.full_name }}
+										{% endfor %}
+										</span>
+										<!-- <span ><i class="fa fa-comments-o"></i> 15 Comments</span> -->
+									</div>
+									<!-- <br/> -->
+							</div>
+						</footer>
+
+					</div>
+					<!-- .item-content -->
+
+				</article>
+
+				<div class="row columns_padding_5 page-nav">
+					<div class="col-md-8">
+						<!-- <div class="col-sm-7 col-md-8 col-lg-8"> -->
+					<h3 class="highlight">Latest Posts</h3>
+					<div class="clearfix"></div>
+					{% for latest in articles %}
+
+						<div class="with_padding_small text-center ds bg_teaser after_cover darkgrey_bg">
+							<div class="item-media entry-thumbnail">
+								<img src="{{latest.image.url}}" alt="article Image">
+								<div class="media-links">
+									<a class="abs-link" title="" href="{{latest.article_url}}"></a>
+								</div>
+
+							</div>
+							<div class="item-content">
+								<div class="small-text highlightlinks">
+									<h4>{{ latest.article_title }}</h4>
+								</div>
+
+							</div>
+							<!-- eof .item-content -->
+							<footer class=" entry-meta ">
+								<div class="content-justify">
+									<span class="entry-date">
+										<time class="entry-date" datetime="2017-03-13T08:50:40+00:00">
+											{{ article.created_date|date:"M" }} <span>{{ article.created_date|date:"d, Y" }}</span>
+										</time>
+									</span>
+										<div class="blog-post-info capitalize ">
+											<span><i class="fa fa-user"></i>
+											By
+											{% for author in article.article_author.all %}
+													{% if not forloop.first %}, {% endif %}
+													{{ author.full_name }}
+											{% endfor %}
+											</span>
+											<!-- <span ><i class="fa fa-comments-o"></i> 15 Comments</span> -->
+										</div>
+										<!-- <br/> -->
+								</div>
+							</footer>
+						</div>
+
+
+					</div>
+					<!-- <div class="clearfix"></div> -->
+				{% endfor %}
+				</div>
+
+			</div>
+			<!--eof .col-sm-8 (main content)-->
+
+			<!-- sidebar -->
+			<aside class="col-sm-5 col-md-4 col-lg-4">
+
+
+				<div class="widget widget_apsc_widget">
+					<h3 class="widget-title highlight">Get In Touch</h3>
+					<div class="apsc-icons-wrapper clearfix apsc-theme-4">
+						<div class="apsc-each-profile">
+							<a class="apsc-facebook-icon clearfix" href="#">
+								<div class="apsc-inner-block">
+									<span class="social-icon">
+										<i class="fa fa-facebook apsc-facebook"></i>
+										<span class="media-name">Facebook</span>
+									</span>
+									<span class="apsc-count">9.8K</span>
+									<span class="apsc-media-type">Fans</span>
+								</div>
+							</a>
+						</div>
+						<div class="apsc-each-profile">
+							<a class="apsc-twitter-icon clearfix" href="#">
+								<div class="apsc-inner-block">
+									<span class="social-icon">
+										<i class="fa fa-twitter apsc-twitter"></i>
+										<span class="media-name">Twitter</span>
+									</span>
+									<span class="apsc-count">4.9K</span>
+									<span class="apsc-media-type">Followers</span>
+								</div>
+							</a>
+						</div>
+						<div class="apsc-each-profile">
+							<a class="apsc-google-plus-icon clearfix" href="#">
+								<div class="apsc-inner-block">
+									<span class="social-icon">
+										<i class="apsc-googlePlus fa fa-google-plus"></i>
+										<span class="media-name">google+</span>
+									</span>
+									<span class="apsc-count">10.1M</span>
+									<span class="apsc-media-type">Followers</span>
+								</div>
+							</a>
+						</div>
+						<div class="apsc-each-profile">
+							<a class="apsc-instagram-icon clearfix" href="#">
+								<div class="apsc-inner-block">
+									<span class="social-icon">
+										<i class="apsc-instagram fa fa-instagram"></i>
+										<span class="media-name">Instagram</span>
+									</span>
+									<span class="apsc-count">4</span>
+									<span class="apsc-media-type">Followers</span>
+								</div>
+							</a>
+						</div>
+						<div class="apsc-each-profile">
+							<a class="apsc-youtube-icon clearfix" href="#">
+								<div class="apsc-inner-block">
+									<span class="social-icon">
+										<i class="apsc-youtube fa fa-youtube"></i>
+										<span class="media-name">Youtube</span>
+									</span>
+									<span class="apsc-count">2.2K</span>
+									<span class="apsc-media-type">Subscriber</span>
+								</div>
+							</a>
+						</div>
+
+					</div>
+
+				</div>
+
+
+				<div class="widget widget_mailchimp">
+
+					<h3 class="widget-title highlight">Newsletter</h3>
+
+					<form class="signup form-inline" action="./" method="get">
+						<div class="form-group">
+							<input name="email" type="email" class="mailchimp_email form-control" placeholder="Email">
+						</div>
+						<button type="submit" class="theme_button color1">Send</button>
+						<div class="response"></div>
+					</form>
+
+					<p>Subscribe to our latest news to be updated, we promise not to spam!</p>
+
+				</div>
+
+				<div class="widget widget_archive">
+
+					<h3 class="widget-title highlight">Archive</h3>
+					<ul class="greylinks">
+						<li>
+							<a href="blog-right.html">November 2017</a>
+						</li>
+						<li>
+							<a href="blog-right.html">December 2017</a>
+						</li>
+						<li>
+							<a href="blog-right.html">January 2017</a>
+						</li>
+						<li>
+							<a href="blog-right.html">February 2017</a>
+						</li>
+						<li>
+							<a href="blog-right.html">March 2017</a>
+						</li>
+					</ul>
+				</div>
+
+				<div class="widget widget_search">
+					<h3 class="widget-title highlight">Search on Blog</h3>
+					<form class="searchform form-inline" action="{% url 'search' %}" method="GET">
+						{% csrf_token %}
+						<div class="form-group">
+							<!-- <label class="screen-reader-text" for="widget-search">Search for:</label> -->
+							<input id="widget-search" type="text" value="" name="search" class="form-control" placeholder="Search keyword">
+						</div>
+						<button type="submit" class="theme_button color1">Search</button>
+						<!-- <input name="" value="Submit" class="theme_button color1" type="submit"> -->
+					</form>
+				</div>
+
+
+			</aside>
+			<!-- eof aside sidebar -->
+
+		</div>
+	</div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,205 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<section class="page_breadcrumbs ds parallax section_padding_top_65 section_padding_bottom_65">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12 text-center">
+				<h2 class="highlight bold">About Us</h2>
+				<ol class="breadcrumb to_animate animated pulse" data-animation="pulse"
+					data-delay="150">
+					<li><a href="{% url 'home' %}"><i class="fa fa-home"></i> Home</a>	</li>
+					<li class="active"><i class="fa fa-briefcase"></i> About us</li>
+				</ol>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section id="about" class="ls section_padding_top_100 section_padding_bottom_75 columns_margin_bottom_30">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6 col-md-push-3 text-center">
+				<div class="horiz_lg_padding">
+						<h3 class="section_header highlight">About</h3>
+						<span class="logo_text">
+							<strong class="playfair">{{ church.organization_name }}</strong>
+						</span>
+						<br/>
+
+					<!-- <h2 class="section_header highlight">The Ministry of the Saint</h2> -->
+
+				<div class="col-md-6 col-md-push-3 text-center">
+				<h3 class="highlight"> Mission Statement</h3>
+				<p class="grey playfair">{{ organization_overview.mission_statement }}</p>
+				<br/>
+				<h3 class="highlight"> Philosopy</h3>
+				<p class="grey playfair">{{ organization_overview.philosophy }}</p>
+				<br/>
+				<h3 class="highlight"> Mandate </h3>
+				<p class="grey playfair">{{ organization_overview.mandate }}</p>
+				<br/>
+				<h3 class="highlight"> Vision</h3>
+				<p class="grey playfair">{{ organization_overview.vision }}</p>
+				<br/>
+				<h3 class="highlight"> Population</h3>
+				<p class="grey playfair">{{ organization_overview.population }}</p>
+				<br/>
+				<h3 class="highlight">Branch</h3>
+				<p class="grey playfair">{{ organization_overview.branch }}</p>
+				<br/>
+				<h3 class="highlight"> Cell Fellowship</h3>
+				<p class="grey playfair">{{ organization_overview.Cell_fellowship }}</p>
+				<br/>
+
+			</div>
+		</div>
+			</div>
+			<div class="col-sm-6 col-md-3 col-md-pull-6">
+				<div class="with_background with_padding teaser text-center">
+					<img src="{% static 'images/icons/priest.png' %}" alt="" />
+					<h4 class="bottommargin_0 topmargin_10 grey">Daily Prayers</h4>
+				</div>
+				<div class="with_background with_padding teaser text-center topmargin_30">
+					<img src="{% static 'images/icons/bible.png' %}" alt="" />
+					<h4 class="bottommargin_0 topmargin_10 grey">Сontinuous Teaching</h4>
+				</div>
+			</div>
+			<div class="col-sm-6 col-md-3">
+				<div class="with_background with_padding teaser text-center">
+					<img src="{% static 'images/icons/hands.png' %}" alt="" />
+					<h4 class="bottommargin_0 topmargin_10 grey">Community Helpers</h4>
+				</div>
+				<div class="with_background with_padding teaser text-center topmargin_30">
+					<img src="{% static 'images/icons/church.png' %}" alt="" />
+					<h4 class="bottommargin_0 topmargin_10 grey">Set of Sermons</h4>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="ls">
+	<div class="owl-carousel center-scale" data-responsive-lg="5" data-responsive-md="5" data-responsive-sm="3" data-responsive-xs="2" data-center="true" data-loop="true" data-margin="0" data-nav="true">
+
+		<div class="vertical-item content-absolute corporate consulting">
+			<div class="item-media">
+				<img src="{% static 'images/gallery_square/01.jpg' %}" alt="">
+				<div class="media-links">
+					<a class="abs-link prettyPhoto" data-gal="prettyPhoto[gal]" title="" href="{% static 'images/gallery/01.jpg' %}"></a>
+				</div>
+			</div>
+		</div>
+
+		<div class="vertical-item content-absolute corporate consulting">
+			<div class="item-media">
+				<img src="{% static 'images/gallery_square/02.jpg' %}" alt="">
+				<div class="media-links">
+					<a class="abs-link prettyPhoto" data-gal="prettyPhoto[gal]" title="" href="{% static 'images/gallery/02.jpg' %}"></a>
+				</div>
+			</div>
+		</div>
+
+		<div class="vertical-item content-absolute corporate consulting">
+			<div class="item-media">
+				<img src="{% static 'images/gallery_square/03.jpg' %}" alt="">
+				<div class="media-links">
+					<a class="abs-link prettyPhoto" data-gal="prettyPhoto[gal]" title="" href="{% static 'images/gallery/03.jpg' %}"></a>
+				</div>
+			</div>
+		</div>
+
+		<div class="vertical-item content-absolute corporate consulting">
+			<div class="item-media">
+				<img src="{% static 'images/gallery_square/04.jpg' %}" alt="">
+				<div class="media-links">
+					<a class="abs-link prettyPhoto" data-gal="prettyPhoto[gal]" title="" href="{% static 'images/gallery/04.jpg' %}"></a>
+				</div>
+			</div>
+		</div>
+
+		<div class="vertical-item content-absolute corporate consulting">
+			<div class="item-media">
+				<img src="{% static 'images/gallery_square/05.jpg' %}" alt="">
+				<div class="media-links">
+					<a class="abs-link prettyPhoto" data-gal="prettyPhoto[gal]" title="" href="{% static 'images/gallery/05.jpg' %}"></a>
+				</div>
+			</div>
+		</div>
+
+		<div class="vertical-item content-absolute corporate consulting">
+			<div class="item-media">
+				<img src="{% static 'images/gallery_square/06.jpg' %}" alt="">
+				<div class="media-links">
+					<a class="abs-link prettyPhoto" data-gal="prettyPhoto[gal]" title="" href="{% static 'images/gallery/06.jpg' %}"></a>
+				</div>
+			</div>
+		</div>
+
+		<div class="vertical-item content-absolute corporate consulting">
+			<div class="item-media">
+				<img src="{% static 'images/gallery_square/07.jpg' %}" alt="">
+				<div class="media-links">
+					<a class="abs-link prettyPhoto" data-gal="prettyPhoto[gal]" title="" href="{% static 'images/gallery/07.jpg' %}"></a>
+				</div>
+			</div>
+		</div>
+
+		<div class="vertical-item content-absolute corporate consulting">
+			<div class="item-media">
+				<img src="{% static 'images/gallery_square/08.jpg' %}" alt="">
+				<div class="media-links">
+					<a class="abs-link prettyPhoto" data-gal="prettyPhoto[gal]" title="" href="{% static 'images/gallery/08.jpg' %}"></a>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</section>
+
+<section class="ls page_testimonials section_padding_100">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8 col-md-offset-2 text-center">
+				<h3>Testimonials</h3>
+				<h2 class="section_header highlight">What They Say</h2>
+				<div class="owl-carousel topmargin_40" data-responsive-lg="1" data-responsive-md="1" data-responsive-sm="1" data-dots="true">
+
+					<blockquote class="with_quote bottommargin_0">
+						Ground round tenderloin alcatra, chicken landjaeger kevin short ribs ham hock pork chop. Bresaola capicola brisket shankle shank, strip steak burgdoggen. Pig tenderloin frankfurter porchetta.
+						<div class="item-meta">
+							<h5>
+								<a href="#">Simon Green</a>
+							</h5>
+							<p>Church Visitor</p>
+						</div>
+					</blockquote>
+
+					<blockquote class="with_quote bottommargin_0">
+						Ground round tenderloin alcatra, chicken landjaeger kevin short ribs ham hock pork chop. Bresaola capicola brisket shankle shank, strip steak burgdoggen. Pig tenderloin frankfurter porchetta.
+						<div class="item-meta">
+							<h5>
+								<a href="#">Simon Green</a>
+							</h5>
+							<p>Church Visitor</p>
+						</div>
+					</blockquote>
+
+					<blockquote class="with_quote bottommargin_0">
+						Ground round tenderloin alcatra, chicken landjaeger kevin short ribs ham hock pork chop. Bresaola capicola brisket shankle shank, strip steak burgdoggen. Pig tenderloin frankfurter porchetta.
+						<div class="item-meta">
+							<h5>
+								<a href="#">Simon Green</a>
+							</h5>
+							<p>Church Visitor</p>
+						</div>
+					</blockquote>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,131 @@
+{% load static %}
+
+<!------------------------------ Footer Section ------------------------------------>
+<section id="subscribe" class="section_subscribe cs parallax section_padding_50 table_section table_section_md">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 text-center text-md-left">
+        <h2 class="bottommargin_10">Do You Want To Be New Member?</h2>
+        <p class="fontsize_20 grey">We have a strong sense of community with parishioners.</p>
+      </div>
+      <div class="col-md-4 text-center text-md-right">
+        <div class="widget widget_mailchimp">
+          <form class="signup form-inline" action="./" method="get">
+            <div class="form-group inline-block">
+              <input class="mailchimp_email form-control" name="email" type="email" placeholder="Email Address">
+            </div>
+            <button type="submit" class="theme_button">Sign Up!</button>
+            <div class="response"></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="page_footer ds section_padding_top_75 section_padding_bottom_65">
+  <div class="container">
+
+    <div class="row">
+
+      <div class="col-md-4 col-sm-6 text-center">
+        <a href="{% url 'home' %}" class="logo top_logo text-left bottommargin_10">
+          <img src="{{ church.logo.url }}"  alt="logo">
+          <span class="logo_text">
+            <strong class="playfair">{{ church.organization_name }}</strong>
+            <!-- <span class="small-text">{{ organization.organization_lastname }}</span> -->
+            </span>
+          </a>
+
+
+        <p>{{ church.service_invite }}</p>
+
+        <p class="greylinks">
+    <a href="#" class="social-icon color-icon border-icon rounded-icon soc-facebook"></a>
+    <a href="#" class="social-icon color-icon border-icon rounded-icon soc-twitter"></a>
+    <a href="#" class="social-icon color-icon border-icon rounded-icon soc-google"></a>
+    <a href="#" class="social-icon color-icon border-icon rounded-icon soc-instagram"></a>
+    <a href="#" class="social-icon color-icon border-icon rounded-icon soc-pinterest"></a>
+    <a href="#" class="social-icon color-icon border-icon rounded-icon soc-youtube"></a>
+  </p>
+      </div>
+
+      <div class="col-md-4 col-sm-6 text-center">
+        <div class="widget topmargin_20">
+          <h3 class="widget-title highlight to_animate animated pulse" data-animation="pulse"
+						data-delay="150"><a href="{% url 'contact' %}">Contact Us</a></h3>
+
+          <div>
+            <div class="media small-teaser inline-block margin_0">
+              <div class="media-left">
+                <i class="fa fa-map-marker highlight fontsize_16"></i>
+              </div>
+              <div class="media-body">
+
+                  {{ church.address_line_1 }}, {{ church.address_line_2 }}, {{ church.city }},
+                  <strong>{{ church.state }}, {{ church.country }}.</strong><br />
+                  Postal Code: {{ church.postal_code }} <br />
+                </div>
+              </div>
+              <br>
+
+              <div class="media small-teaser inline-block">
+                <div class="media-left">
+                  <i class="fa fa-envelope highlight fontsize_16"></i>
+                </div>
+                <div class="media-body underlined-links greylinks">
+
+                    <a href="mailto:your@mail.com" class="bold">{{ church.email }}</a>
+
+                </div>
+              </div>
+              <br>
+
+              <div class="media small-teaser inline-block">
+                <div class="media-left">
+                  <i class="fa fa-phone highlight fontsize_16"></i>
+                </div>
+                <div class="media-body">
+                  <strong>{{ church.phone_number }}</strong>
+
+                </div>
+              </div>
+              <br>
+
+              <div class="media small-teaser inline-block">
+                <div class="media-left">
+                  <i class="fa fa-clock-o highlight fontsize_16"></i>
+                </div>
+                <div class="media-body">
+                  Sun - Sat
+                  <strong>07:00 - 21:00</strong>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="col-md-4 col-sm-6 text-center">
+          <div class="topmargin_20">
+            <div class="widget widget_twitter">
+              <h3 class="widget-title">Latest Tweets</h3>
+              <div class="twitter"></div>
+            </div>
+          </div>
+        </div>
+
+    </div>
+  </div>
+</footer>
+
+<section class="ls page_copyright table_section section_padding_50">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 text-center">
+        <p class="grey thin">Copyright &copy; 2022 Powered By Webstacka | All Rights Reserved.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<!------------------------------ eof Footer Section ------------------------------------>

@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<!------------------------------------------------------ Meet Our Team Section -------------------------------------------------------->
+<section class="page_breadcrumbs ds parallax section_padding_top_65 section_padding_bottom_65">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12 text-center">
+				<h2 class="highlight bold">Meet Our Team</h2>
+				<ol class="breadcrumb to_animate animated pulse" data-animation="pulse"
+					data-delay="150">
+				<li><a href="{% url 'home' %}"><i class="fa fa-home"></i> Home</a>	</li>
+					<li class="active"><i class="fa fa-user-plus"> Meet Our Team</i></li>
+				</ol>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="ls page_portfolio section_padding_top_100 section_padding_bottom_75">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12">
+
+				<div class="isotope_container isotope row masonry-layout" data-filters=".isotope_filters">
+					{% for staff in staffs %}
+					<div class="isotope-item col-lg-4 col-md-6 col-sm-12 category3">
+						<div class="vertical-item content-padding with_background text-center">
+							<div class="item-media">
+								<a href="{{ staff.staff_url }}"><img src="{{ staff.image.url }}" alt="team 1"></a>
+							</div>
+							<div class="item-content">
+								<h4><a href="{{ staff.staff_url }}">{{ staff.first_name }} {{ staff.last_name }}</a></h4>
+
+								<p class="small-text">{{ staff.worker_title }}</p>
+
+								<p class="social-icons">
+									<a class="social-icon border-icon color-icon rounded-icon soc-facebook" href="#" title="" data-toggle="tooltip" data-original-title="Facebook"></a>
+									<a class="social-icon border-icon color-icon rounded-icon soc-whatsapp" href="#" title="" data-toggle="tooltip" data-original-title="Whatsapp"></a>
+									<a class="social-icon border-icon color-icon rounded-icon soc-google" href="#" title="" data-toggle="tooltip" data-original-title="Google"></a>
+									<a class="social-icon border-icon color-icon rounded-icon soc-instagram" href="#" title="" data-toggle="tooltip" data-original-title="Instagram"></a>
+								</p>
+
+							</div>
+						</div>
+					</div>
+					{% endfor %}
+
+				</div>
+				<!-- eof .isotope_container.row -->
+
+<!-- Set Up Pagination --------------------------------------------------->
+<div class="col-sm-12 text-center">
+	<nav aria-label="Page navigation example">
+	 <ul class="pagination">
+	{% if staffs.has_previous %}
+	 <li class="page-item"><a class="page-link" href="?page=1">&laquo FIRST</a></li>
+
+	 <li class="page-item"><a class="page-link" href="?page={{ staffs.previous_page_number }}">PREV</a></li>
+
+	{% endif %}
+
+	{% for i in nums %}
+		 <li class="page-item "><a class="page-link"
+			 href="?page={{ forloop.counter }}">
+			 {{ forloop.counter }}</a></li>
+
+	{% endfor %}
+
+	{% if staffs.has_next %}
+	 <li class="page-item"><a class="page-link"
+		 href="?page={{ staffs.next_page_number }}">NEXT</a></li>
+
+	 <li class="page-item"><a class="page-link" href="?page={{ staffs.paginator.num_pages }}">LAST &raquo</a></li>
+
+	{% endif %}
+	</ul>
+	</nav>
+</div>
+
+
+
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-------------------------------------------------- End Of Meet Our Team Section ------------------------------------------------->
+
+
+{% endblock %}

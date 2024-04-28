@@ -1,0 +1,1243 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+	<title>{{ church.organization_name }}</title>
+	<meta charset="utf-8">
+	<!--[if IE]>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<![endif]-->
+  <!-- Meta -->
+  <meta name="keywords" content="" />
+  <meta name="author" content="The Ministry of the Saint">
+  <meta name="robots" content="" />
+  <meta name="description" content="Our mission in the ministry of the saint is to share the Good of Jesus Christ, loving, faith and serving." />
+
+  <!-- this styles only adds some repairs on idevices  -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+	<link href="{{ church.logo.url }}" rel="shortcut icon" type="image/x-icon" />
+	<!-- <link href="{% static 'images/favicon.ico' %}" rel="shortcut icon" type="image/x-icon" /> -->
+
+	<!-- custom css -->
+	<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type="text/css"/>
+	<link rel="stylesheet" href="{% static 'css/animations.css' %}" type="text/css"/>
+	<link rel="stylesheet" href="{% static 'css/fonts.css' %}"  type="text/css"/>
+
+	<link rel="stylesheet" href="{% static 'css/main.css' %}">
+	<script src="{% static 'js/vendor/modernizr-2.6.2.min.js' %}"></script>
+
+	<!--[if lt IE 9]>
+		<script src="js/vendor/html5shiv.min.js"></script>
+		<script src="js/vendor/respond.min.js"></script>
+		<script src="js/vendor/jquery-1.12.4.min.js"></script>
+	<![endif]-->
+
+
+</head>
+<body>
+
+
+<!-- content -->
+{% block content %}
+
+
+	<!--[if lt IE 9]>
+		<div class="bg-danger text-center">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/" class="highlight">upgrade your browser</a> to improve your experience.</div>
+	<![endif]-->
+
+	<div class="preloader">
+		<div class="preloader_image"></div>
+	</div>
+
+	<!-- search modal -->
+	<div class="modal" tabindex="-1" role="dialog" aria-labelledby="search_modal" id="search_modal">
+		<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			<span aria-hidden="true">
+				<i class="rt-icon2-cross2"></i>
+			</span>
+		</button>
+		<div class="widget widget_search">
+			<form method="get" class="searchform search-form form-inline" action="./">
+				<div class="form-group">
+					<input type="text" value="" name="search" class="form-control" placeholder="Search keyword" id="modal-search-input">
+				</div>
+				<button type="submit" class="theme_button">Search</button>
+			</form>
+		</div>
+	</div>
+
+	<!-- Unyson messages modal -->
+	<div class="modal fade" tabindex="-1" role="dialog" id="messages_modal">
+		<div class="fw-messages-wrap ls with_padding">
+			<!-- Uncomment this UL with LI to show messages in modal popup to your user: -->
+			<!--
+		<ul class="list-unstyled">
+			<li>Message To User</li>
+		</ul>
+		-->
+
+		</div>
+	</div>
+	<!-- eof .modal -->
+
+	<!-- wrappers for visual page editor and boxed version of template -->
+	<div id="canvas">
+		<div id="box_wrapper">
+
+			<!-- template sections -->
+
+<section class="intro_section ds page_mainslider">
+	<div class="flexslider" data-nav="false">
+		<ul class="slides">
+
+			<li>
+				<img src="{% static 'images/slide01.jpg' %}" alt="">
+				<div class="container">
+					<div class="row">
+						<div class="col-sm-12 text-center">
+							<div class="slide_description_wrapper">
+								<div class="slide_description">
+									<div class="intro-layer" data-animation="fadeInUp">
+										<h3>
+											There is no other way except Jesus.
+										</h3>
+									</div>
+									<div class="intro-layer" data-animation="fadeInUp">
+										<h2 class="bold">
+											We love God.
+											<br> We believe in God.
+										</h2>
+									</div>
+									<div class="intro-layer" data-animation="fadeInUp">
+										<a class="theme_button color1 to_animate animated tossing" data-animation="tossing"
+											data-delay="150" href="{% url 'organization' %}">Read more</a>
+									</div>
+								</div>
+								<!-- eof .slide_description -->
+							</div>
+							<!-- eof .slide_description_wrapper -->
+						</div>
+						<!-- eof .col-* -->
+					</div>
+					<!-- eof .row -->
+				</div>
+				<!-- eof .container -->
+			</li>
+
+			<li>
+				<img src="{% static 'images/slide02.jpg' %}" alt="">
+				<div class="container">
+					<div class="row">
+						<div class="col-sm-12 text-center">
+							<div class="slide_description_wrapper">
+								<div class="slide_description">
+									<div class="intro-layer" data-animation="fadeInUp">
+										<h3>
+											Living Hope For Real People
+										</h3>
+									</div>
+									<div class="intro-layer" data-animation="fadeInUp">
+										<h2 class="bold">
+											Where People Gather
+											<br> to Worship &amp; Share
+										</h2>
+									</div>
+									<div class="intro-layer" data-animation="fadeInUp">
+										<a class="theme_button color1 to_animate animated tossing" data-animation="tossing"
+											data-delay="150" href="{% url 'organization' %}">Read more</a>
+									</div>
+								</div>
+								<!-- eof .slide_description -->
+							</div>
+							<!-- eof .slide_description_wrapper -->
+						</div>
+						<!-- eof .col-* -->
+					</div>
+					<!-- eof .row -->
+				</div>
+				<!-- eof .container -->
+			</li>
+
+			<li>
+				<img src="{% static 'images/slide03.jpg' %}" alt="">
+				<div class="container">
+					<div class="row">
+						<div class="col-sm-12 text-center">
+							<div class="slide_description_wrapper">
+								<div class="slide_description">
+									<div class="intro-layer" data-animation="fadeInUp">
+										<h3>
+											Building Holy and Healthy Lives
+										</h3>
+									</div>
+									<div class="intro-layer" data-animation="fadeInUp">
+										<h2 class="bold">
+											We Build Hope
+											<br> and Grow Together
+										</h2>
+									</div>
+									<div class="intro-layer" data-animation="fadeInUp">
+										<a class="theme_button color1 to_animate animated tossing" data-animation="tossing"
+											data-delay="150" href="{% url 'organization' %}">Read more</a>
+									</div>
+								</div>
+								<!-- eof .slide_description -->
+							</div>
+							<!-- eof .slide_description_wrapper -->
+						</div>
+						<!-- eof .col-* -->
+					</div>
+					<!-- eof .row -->
+				</div>
+				<!-- eof .container -->
+			</li>
+
+		</ul>
+	</div>
+	<!-- eof flexslider -->
+
+</section>
+<!-- navbar -->
+{% include 'includes/navbar.html' %}
+
+
+
+<!--About Us Section ------------------------------------------------------------------------------------>
+<section id="about" class="ls section_padding_top_100 section_padding_bottom_75 columns_margin_bottom_30">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6 col-md-push-3 text-center">
+				<div class="horiz_lg_padding">
+					<h3 class="section_header highlight to_animate animated pulse" data-animation="pulse"
+						data-delay="150"><a href="{% url 'organization' %}">About Us</a></h3>
+					<p class="grey playfair">{{ organization_overview.mission_statement }}</p>
+					<p>{{ organization_overview.philosophy }}</p>
+				</div>
+			</div>
+			<div class="col-sm-6 col-md-3 col-md-pull-6">
+				<div class="with_background with_padding teaser text-center to_animate animated slideLeft" data-animation="slideLeft"
+					data-delay="150">
+					<img src="{% static 'images/icons/priest.png' %}" alt="" />
+					<h4 class="bottommargin_0 topmargin_10 grey">Daily Prayers</h4>
+				</div>
+				<div class="with_background with_padding teaser text-center topmargin_30 to_animate animated slideLeft" data-animation="slideLeft"
+					data-delay="150">
+					<img src="{% static 'images/icons/bible.png' %}" alt="" />
+					<h4 class="bottommargin_0 topmargin_10 grey">Сontinuous Teaching</h4>
+				</div>
+			</div>
+			<div class="col-sm-6 col-md-3">
+				<div class="with_background with_padding teaser text-center to_animate animated slideRight" data-animation="slideRight"
+					data-delay="150">
+					<img src="{% static 'images/icons/hands.png' %}" alt="" />
+					<h4 class="bottommargin_0 topmargin_10 grey">Community Helpers</h4>
+				</div>
+				<div class="with_background with_padding teaser text-center topmargin_30 to_animate animated slideRight" data-animation="slideRight"
+					data-delay="150">
+					<img src="{% static 'images/icons/church.png' %}" alt="" />
+					<h4 class="bottommargin_0 topmargin_10 grey">Set of Sermons</h4>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!--- About Us Section -------------------------------------------------------------------------------------------------------->
+
+
+<!--- Gallery Section --------------------------------------------------------------------------------------------------------->
+<section class="ls">
+	<!-- <div class="container"> -->
+		<div class="row">
+			<div class="col-md-12 text-center">
+				<h3>Gallery</h3>
+					<h3 class="section_header highlight to_animate animated pulse" data-animation="pulse"
+						data-delay="150"><a href="{{ 'gallery' }}">Image Collection</a></h3>
+			</div>
+		</div>
+
+	<div class="owl-carousel center-scale" data-responsive-lg="5" data-responsive-md="5" data-responsive-sm="3" data-responsive-xs="2" data-center="true" data-loop="true" data-margin="0" data-nav="true">
+
+	{% for pic in gallery %}
+		<div class="vertical-item content-absolute corporate consulting">
+			<div class="item-media">
+				<img src="{{ pic.image.url }}" alt="pic 1">
+				<div class="media-links">
+					<!-- <a class="abs-link prettyPhoto" data-gal="prettyPhoto[gal]" title="" href="{{ pic.image.url }}"></a> -->
+				</div>
+			</div>
+		</div>
+	{% endfor %}
+
+		<!-- <div class="vertical-item content-absolute corporate consulting">
+			<div class="item-media">
+				<img src="{% static 'images/gallery_square/02.jpg' %}" alt="">
+				<div class="media-links">
+					<a class="abs-link prettyPhoto" data-gal="prettyPhoto[gal]" title="" href="{% static 'images/gallery/02.jpg' %}"></a>
+				</div>
+			</div>
+		</div> -->
+
+	</div>
+	<!-- </div> -->
+	<!-- </div> -->
+</section>
+<!--- End Of Gallery Section -------------------------------------------------------------------------------------------------------->
+
+
+<!--- Meet Our Team Section -------------------------------------------------------------------------------------------------------->
+<section class="ls page_portfolio section_padding_top_100 section_padding_bottom_75">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 text-center">
+				<h3>Team Members</h3>
+					<h3 class="section_header highlight to_animate animated pulse" data-animation="pulse"
+						data-delay="150"><a href="{{ 'organization_worker' }}">Meet Our Team</a></h3>
+			</div>
+		</div>
+
+		<div class="isotope_container isotope row masonry-layout" data-filters=".isotope_filters">
+			{% for staff in organization_worker %}
+			<div class="isotope-item col-lg-4 col-md-6 col-sm-12 category3">
+				<div class="vertical-item content-padding with_background text-center">
+					<div class="item-media">
+						<img src="{{ staff.image.url }}" alt="team 1">
+					</div>
+					<div class="item-content">
+						<h4>{{ staff.first_name }} {{ staff.last_name }}</h4>
+
+						<p class="small-text">{{ staff.worker_title }}</p>
+
+						<p class="social-icons">
+							<a class="social-icon border-icon color-icon rounded-icon soc-facebook" href="#" title="" data-toggle="tooltip" data-original-title="Facebook"></a>
+							<a class="social-icon border-icon color-icon rounded-icon soc-whatsapp" href="#" title="" data-toggle="tooltip" data-original-title="Whatsapp"></a>
+							<a class="social-icon border-icon color-icon rounded-icon soc-google" href="#" title="" data-toggle="tooltip" data-original-title="Google"></a>
+							<a class="social-icon border-icon color-icon rounded-icon soc-instagram" href="#" title="" data-toggle="tooltip" data-original-title="Instagram"></a>
+						</p>
+
+					</div>
+				</div>
+			</div>
+			{% endfor %}
+
+		</div>
+		<!-- eof .isotope_container.row -->
+
+
+	</div>
+</section>
+
+<!---End Of Meet Our Team Section ---------------------------------------------------------------------------------------------------------->
+
+
+<!--- Activity Section --------------------------------------------------------------------------------------------------------------------->
+<section id="events" class="ls section_padding_top_100 section_padding_bottom_100">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12">
+
+				<!-- Nav tabs -->
+				<ul class="nav nav-tabs" role="tablist">
+					<li class="active">
+						<a href="#tab1" role="tab" data-toggle="tab">Past events</a>
+					</li>
+					<li>
+						<a href="#tab2" role="tab" data-toggle="tab">Upcoming events</a>
+					</li>
+				</ul>
+
+				<!-- Tab panes -->
+				<div class="tab-content no-border top-color-border">
+					<div class="tab-pane fade in active" id="tab1">
+
+						<div class="row columns_padding_2">
+
+							<div class="col-md-3 col-sm-6">
+								<div class="vertical-item content-absolute vertical-center content-bg-hover cs">
+									<div class="item-media">
+										<img src="{% static 'images/events/01.jpg' %}" alt="">
+										<div class="media-links">
+											<a class="abs-link" href="event-single-right.html"></a>
+										</div>
+									</div>
+									<div class="item-content">
+										<!-- <div> -->
+										<h3 class="margin_0">
+											Holy Family Jumbo Advent Calendar
+										</h3>
+
+										<div class="cs hovered-content thin">
+											<div class="media small-teaser">
+												<div class="media-left">
+													<i class="fa fa-calendar grey fontsize_16"></i>
+												</div>
+												<div class="media-body">
+													Apr 30, 2017
+												</div>
+											</div>
+											<div class="media small-teaser">
+												<div class="media-left">
+													<i class="fa fa-map-marker grey fontsize_16"></i>
+												</div>
+												<div class="media-body">
+													London, UK
+												</div>
+											</div>
+											<div class="media small-teaser">
+												<div class="media-left">
+													<i class="fa fa-phone grey fontsize_16"></i>
+												</div>
+												<div class="media-body">
+													8 800 259 3489
+												</div>
+											</div>
+										</div>
+										<!-- </div> -->
+									</div>
+								</div>
+							</div>
+
+							<div class="col-md-3 col-sm-6">
+								<div class="vertical-item content-absolute vertical-center content-bg-hover cs">
+									<div class="item-media">
+										<img src="{% static 'images/events/02.jpg' %}" alt="">
+										<div class="media-links">
+											<a class="abs-link" href="event-single-right.html"></a>
+										</div>
+									</div>
+									<div class="item-content">
+										<!-- <div> -->
+										<h3 class="margin_0">
+											Minutes of Your Fame
+										</h3>
+
+										<div class="cs hovered-content thin">
+											<div class="media small-teaser">
+												<div class="media-left">
+													<i class="fa fa-calendar grey fontsize_16"></i>
+												</div>
+												<div class="media-body">
+													Apr 30, 2017
+												</div>
+											</div>
+											<div class="media small-teaser">
+												<div class="media-left">
+													<i class="fa fa-map-marker grey fontsize_16"></i>
+												</div>
+												<div class="media-body">
+													London, UK
+												</div>
+											</div>
+											<div class="media small-teaser">
+												<div class="media-left">
+													<i class="fa fa-phone grey fontsize_16"></i>
+												</div>
+												<div class="media-body">
+													8 800 259 3489
+												</div>
+											</div>
+										</div>
+										<!-- </div> -->
+									</div>
+								</div>
+							</div>
+
+							<div class="col-md-3 col-sm-6">
+								<div class="vertical-item content-absolute vertical-center content-bg-hover cs">
+									<div class="item-media">
+										<img src="{% static 'images/events/03.jpg' %}" alt="">
+										<div class="media-links">
+											<a class="abs-link" href="event-single-right.html"></a>
+										</div>
+									</div>
+									<div class="item-content">
+										<!-- <div> -->
+										<h3 class="margin_0">
+											The History of New Thought of Mankind
+										</h3>
+
+										<div class="cs hovered-content thin">
+											<div class="media small-teaser">
+												<div class="media-left">
+													<i class="fa fa-calendar grey fontsize_16"></i>
+												</div>
+												<div class="media-body">
+													Apr 30, 2017
+												</div>
+											</div>
+											<div class="media small-teaser">
+												<div class="media-left">
+													<i class="fa fa-map-marker grey fontsize_16"></i>
+												</div>
+												<div class="media-body">
+													London, UK
+												</div>
+											</div>
+											<div class="media small-teaser">
+												<div class="media-left">
+													<i class="fa fa-phone grey fontsize_16"></i>
+												</div>
+												<div class="media-body">
+													8 800 259 3489
+												</div>
+											</div>
+										</div>
+										<!-- </div> -->
+									</div>
+								</div>
+							</div>
+
+							<div class="col-md-3 col-sm-6">
+								<div class="vertical-item content-absolute vertical-center content-bg-hover cs">
+									<div class="item-media">
+										<img src="{% static 'images/events/04.jpg' %}" alt="">
+										<div class="media-links">
+											<a class="abs-link" href="event-single-right.html"></a>
+										</div>
+									</div>
+									<div class="item-content">
+										<!-- <div> -->
+										<h3 class="margin_0">
+											Feeling the God Inside You
+										</h3>
+
+										<div class="cs hovered-content thin">
+											<div class="media small-teaser">
+												<div class="media-left">
+													<i class="fa fa-calendar grey fontsize_16"></i>
+												</div>
+												<div class="media-body">
+													Apr 30, 2017
+												</div>
+											</div>
+											<div class="media small-teaser">
+												<div class="media-left">
+													<i class="fa fa-map-marker grey fontsize_16"></i>
+												</div>
+												<div class="media-body">
+													London, UK
+												</div>
+											</div>
+											<div class="media small-teaser">
+												<div class="media-left">
+													<i class="fa fa-phone grey fontsize_16"></i>
+												</div>
+												<div class="media-body">
+													8 800 259 3489
+												</div>
+											</div>
+										</div>
+										<!-- </div> -->
+									</div>
+								</div>
+							</div>
+
+							<div class="col-md-3 col-sm-6">
+								<div class="vertical-item content-absolute vertical-center content-bg-hover cs">
+									<div class="item-media">
+										<img src="{% static 'images/events/05.jpg' %}" alt="">
+										<div class="media-links">
+											<a class="abs-link" href="event-single-right.html"></a>
+										</div>
+									</div>
+									<div class="item-content">
+										<!-- <div> -->
+										<h3 class="margin_0">
+											Series: Let’s Do It God’s Way
+										</h3>
+
+										<div class="cs hovered-content thin">
+											<div class="media small-teaser">
+												<div class="media-left">
+													<i class="fa fa-calendar grey fontsize_16"></i>
+												</div>
+												<div class="media-body">
+													Apr 30, 2017
+												</div>
+											</div>
+											<div class="media small-teaser">
+												<div class="media-left">
+													<i class="fa fa-map-marker grey fontsize_16"></i>
+												</div>
+												<div class="media-body">
+													London, UK
+												</div>
+											</div>
+											<div class="media small-teaser">
+												<div class="media-left">
+													<i class="fa fa-phone grey fontsize_16"></i>
+												</div>
+												<div class="media-body">
+													8 800 259 3489
+												</div>
+											</div>
+										</div>
+										<!-- </div> -->
+									</div>
+								</div>
+							</div>
+
+							<div class="col-md-3 col-sm-6">
+								<div class="vertical-item content-absolute vertical-center content-bg-hover cs">
+									<div class="item-media">
+										<img src="{% static 'images/events/06.jpg' %}" alt="">
+										<div class="media-links">
+											<a class="abs-link" href="event-single-right.html"></a>
+										</div>
+									</div>
+									<div class="item-content">
+										<!-- <div> -->
+										<h3 class="margin_0">
+											Developing A Spiritual Mentality
+										</h3>
+
+										<div class="cs hovered-content thin">
+											<div class="media small-teaser">
+												<div class="media-left">
+													<i class="fa fa-calendar grey fontsize_16"></i>
+												</div>
+												<div class="media-body">
+													Apr 30, 2017
+												</div>
+											</div>
+											<div class="media small-teaser">
+												<div class="media-left">
+													<i class="fa fa-map-marker grey fontsize_16"></i>
+												</div>
+												<div class="media-body">
+													London, UK
+												</div>
+											</div>
+											<div class="media small-teaser">
+												<div class="media-left">
+													<i class="fa fa-phone grey fontsize_16"></i>
+												</div>
+												<div class="media-body">
+													8 800 259 3489
+												</div>
+											</div>
+										</div>
+										<!-- </div> -->
+									</div>
+								</div>
+							</div>
+
+							<div class="col-md-3 col-sm-6">
+								<div class="vertical-item content-absolute vertical-center content-bg-hover cs">
+									<div class="item-media">
+										<img src="{% static 'images/events/07.jpg' %}" alt="">
+										<div class="media-links">
+											<a class="abs-link" href="event-single-right.html"></a>
+										</div>
+									</div>
+									<div class="item-content">
+										<!-- <div> -->
+										<h3 class="margin_0">
+											Perseverance of the Saints
+										</h3>
+
+										<div class="cs hovered-content thin">
+											<div class="media small-teaser">
+												<div class="media-left">
+													<i class="fa fa-calendar grey fontsize_16"></i>
+												</div>
+												<div class="media-body">
+													Apr 30, 2017
+												</div>
+											</div>
+											<div class="media small-teaser">
+												<div class="media-left">
+													<i class="fa fa-map-marker grey fontsize_16"></i>
+												</div>
+												<div class="media-body">
+													London, UK
+												</div>
+											</div>
+											<div class="media small-teaser">
+												<div class="media-left">
+													<i class="fa fa-phone grey fontsize_16"></i>
+												</div>
+												<div class="media-body">
+													8 800 259 3489
+												</div>
+											</div>
+										</div>
+										<!-- </div> -->
+									</div>
+								</div>
+							</div>
+
+							<div class="col-md-3 col-sm-6">
+								<div class="vertical-item content-absolute vertical-center content-bg-hover cs">
+									<div class="item-media">
+										<img src="{% static 'images/events/08.jpg' %}" alt="">
+										<div class="media-links">
+											<a class="abs-link" href="event-single-right.html"></a>
+										</div>
+									</div>
+									<div class="item-content">
+										<!-- <div> -->
+										<h3 class="margin_0">
+											Church Movie Fellowship
+										</h3>
+
+										<div class="cs hovered-content thin">
+											<div class="media small-teaser">
+												<div class="media-left">
+													<i class="fa fa-calendar grey fontsize_16"></i>
+												</div>
+												<div class="media-body">
+													Apr 30, 2017
+												</div>
+											</div>
+											<div class="media small-teaser">
+												<div class="media-left">
+													<i class="fa fa-map-marker grey fontsize_16"></i>
+												</div>
+												<div class="media-body">
+													London, UK
+												</div>
+											</div>
+											<div class="media small-teaser">
+												<div class="media-left">
+													<i class="fa fa-phone grey fontsize_16"></i>
+												</div>
+												<div class="media-body">
+													8 800 259 3489
+												</div>
+											</div>
+										</div>
+										<!-- </div> -->
+									</div>
+								</div>
+							</div>
+
+						</div>
+						<!-- .row -->
+
+					</div>
+					<div class="tab-pane fade" id="tab2">
+
+						<div class="row columns_padding_2">
+
+
+							<div class="col-md-3 col-sm-6">
+								<div class="vertical-item content-absolute vertical-center content-bg-hover cs">
+									<div class="item-media">
+										<img src="{% static 'images/events/01.jpg' %}" alt="">
+										<div class="media-links">
+											<a class="abs-link" href="event-single-right.html"></a>
+										</div>
+									</div>
+									<div class="item-content">
+										<!-- <div> -->
+										<h3 class="margin_0">
+											Holy Family Jumbo Advent Calendar
+										</h3>
+
+										<div class="cs hovered-content thin">
+											<div class="media small-teaser">
+												<div class="media-left">
+													<i class="fa fa-calendar grey fontsize_16"></i>
+												</div>
+												<div class="media-body">
+													Apr 30, 2017
+												</div>
+											</div>
+											<div class="media small-teaser">
+												<div class="media-left">
+													<i class="fa fa-map-marker grey fontsize_16"></i>
+												</div>
+												<div class="media-body">
+													London, UK
+												</div>
+											</div>
+											<div class="media small-teaser">
+												<div class="media-left">
+													<i class="fa fa-phone grey fontsize_16"></i>
+												</div>
+												<div class="media-body">
+													8 800 259 3489
+												</div>
+											</div>
+										</div>
+										<!-- </div> -->
+									</div>
+								</div>
+							</div>
+
+							<div class="col-md-3 col-sm-6">
+								<div class="vertical-item content-absolute vertical-center content-bg-hover cs">
+									<div class="item-media">
+										<img src="{% static 'images/events/02.jpg' %}" alt="">
+										<div class="media-links">
+											<a class="abs-link" href="event-single-right.html"></a>
+										</div>
+									</div>
+									<div class="item-content">
+										<!-- <div> -->
+										<h3 class="margin_0">
+											Minutes of Your Fame
+										</h3>
+
+										<div class="cs hovered-content thin">
+											<div class="media small-teaser">
+												<div class="media-left">
+													<i class="fa fa-calendar grey fontsize_16"></i>
+												</div>
+												<div class="media-body">
+													Apr 30, 2017
+												</div>
+											</div>
+											<div class="media small-teaser">
+												<div class="media-left">
+													<i class="fa fa-map-marker grey fontsize_16"></i>
+												</div>
+												<div class="media-body">
+													London, UK
+												</div>
+											</div>
+											<div class="media small-teaser">
+												<div class="media-left">
+													<i class="fa fa-phone grey fontsize_16"></i>
+												</div>
+												<div class="media-body">
+													8 800 259 3489
+												</div>
+											</div>
+										</div>
+										<!-- </div> -->
+									</div>
+								</div>
+							</div>
+
+							<div class="col-md-3 col-sm-6">
+								<div class="vertical-item content-absolute vertical-center content-bg-hover cs">
+									<div class="item-media">
+										<img src="{% static 'images/events/03.jpg' %}" alt="">
+										<div class="media-links">
+											<a class="abs-link" href="event-single-right.html"></a>
+										</div>
+									</div>
+									<div class="item-content">
+										<!-- <div> -->
+										<h3 class="margin_0">
+											The History of New Thought of Mankind
+										</h3>
+
+										<div class="cs hovered-content thin">
+											<div class="media small-teaser">
+												<div class="media-left">
+													<i class="fa fa-calendar grey fontsize_16"></i>
+												</div>
+												<div class="media-body">
+													Apr 30, 2017
+												</div>
+											</div>
+											<div class="media small-teaser">
+												<div class="media-left">
+													<i class="fa fa-map-marker grey fontsize_16"></i>
+												</div>
+												<div class="media-body">
+													London, UK
+												</div>
+											</div>
+											<div class="media small-teaser">
+												<div class="media-left">
+													<i class="fa fa-phone grey fontsize_16"></i>
+												</div>
+												<div class="media-body">
+													8 800 259 3489
+												</div>
+											</div>
+										</div>
+										<!-- </div> -->
+									</div>
+								</div>
+							</div>
+
+							<div class="col-md-3 col-sm-6">
+								<div class="vertical-item content-absolute vertical-center content-bg-hover cs">
+									<div class="item-media">
+										<img src="{% static 'images/events/04.jpg' %}" alt="">
+										<div class="media-links">
+											<a class="abs-link" href="event-single-right.html"></a>
+										</div>
+									</div>
+									<div class="item-content">
+										<!-- <div> -->
+										<h3 class="margin_0">
+											Feeling the God Inside You
+										</h3>
+
+										<div class="cs hovered-content thin">
+											<div class="media small-teaser">
+												<div class="media-left">
+													<i class="fa fa-calendar grey fontsize_16"></i>
+												</div>
+												<div class="media-body">
+													Apr 30, 2017
+												</div>
+											</div>
+											<div class="media small-teaser">
+												<div class="media-left">
+													<i class="fa fa-map-marker grey fontsize_16"></i>
+												</div>
+												<div class="media-body">
+													London, UK
+												</div>
+											</div>
+											<div class="media small-teaser">
+												<div class="media-left">
+													<i class="fa fa-phone grey fontsize_16"></i>
+												</div>
+												<div class="media-body">
+													8 800 259 3489
+												</div>
+											</div>
+										</div>
+										<!-- </div> -->
+									</div>
+								</div>
+							</div>
+
+							<div class="col-md-3 col-sm-6">
+								<div class="vertical-item content-absolute vertical-center content-bg-hover cs">
+									<div class="item-media">
+										<img src="{% static 'images/events/05.jpg' %}" alt="">
+										<div class="media-links">
+											<a class="abs-link" href="event-single-right.html"></a>
+										</div>
+									</div>
+									<div class="item-content">
+										<!-- <div> -->
+										<h3 class="margin_0">
+											Series: Let’s Do It God’s Way
+										</h3>
+
+										<div class="cs hovered-content thin">
+											<div class="media small-teaser">
+												<div class="media-left">
+													<i class="fa fa-calendar grey fontsize_16"></i>
+												</div>
+												<div class="media-body">
+													Apr 30, 2017
+												</div>
+											</div>
+											<div class="media small-teaser">
+												<div class="media-left">
+													<i class="fa fa-map-marker grey fontsize_16"></i>
+												</div>
+												<div class="media-body">
+													London, UK
+												</div>
+											</div>
+											<div class="media small-teaser">
+												<div class="media-left">
+													<i class="fa fa-phone grey fontsize_16"></i>
+												</div>
+												<div class="media-body">
+													8 800 259 3489
+												</div>
+											</div>
+										</div>
+										<!-- </div> -->
+									</div>
+								</div>
+							</div>
+
+							<div class="col-md-3 col-sm-6">
+								<div class="vertical-item content-absolute vertical-center content-bg-hover cs">
+									<div class="item-media">
+										<img src="{% static 'images/events/06.jpg' %}" alt="">
+										<div class="media-links">
+											<a class="abs-link" href="event-single-right.html"></a>
+										</div>
+									</div>
+									<div class="item-content">
+										<!-- <div> -->
+										<h3 class="margin_0">
+											Developing A Spiritual Mentality
+										</h3>
+
+										<div class="cs hovered-content thin">
+											<div class="media small-teaser">
+												<div class="media-left">
+													<i class="fa fa-calendar grey fontsize_16"></i>
+												</div>
+												<div class="media-body">
+													Apr 30, 2017
+												</div>
+											</div>
+											<div class="media small-teaser">
+												<div class="media-left">
+													<i class="fa fa-map-marker grey fontsize_16"></i>
+												</div>
+												<div class="media-body">
+													London, UK
+												</div>
+											</div>
+											<div class="media small-teaser">
+												<div class="media-left">
+													<i class="fa fa-phone grey fontsize_16"></i>
+												</div>
+												<div class="media-body">
+													8 800 259 3489
+												</div>
+											</div>
+										</div>
+										<!-- </div> -->
+									</div>
+								</div>
+							</div>
+
+							<div class="col-md-3 col-sm-6">
+								<div class="vertical-item content-absolute vertical-center content-bg-hover cs">
+									<div class="item-media">
+										<img src="{% static 'images/events/07.jpg' %}" alt="">
+										<div class="media-links">
+											<a class="abs-link" href="event-single-right.html"></a>
+										</div>
+									</div>
+									<div class="item-content">
+										<!-- <div> -->
+										<h3 class="margin_0">
+											Perseverance of the Saints
+										</h3>
+
+										<div class="cs hovered-content thin">
+											<div class="media small-teaser">
+												<div class="media-left">
+													<i class="fa fa-calendar grey fontsize_16"></i>
+												</div>
+												<div class="media-body">
+													Apr 30, 2017
+												</div>
+											</div>
+											<div class="media small-teaser">
+												<div class="media-left">
+													<i class="fa fa-map-marker grey fontsize_16"></i>
+												</div>
+												<div class="media-body">
+													London, UK
+												</div>
+											</div>
+											<div class="media small-teaser">
+												<div class="media-left">
+													<i class="fa fa-phone grey fontsize_16"></i>
+												</div>
+												<div class="media-body">
+													8 800 259 3489
+												</div>
+											</div>
+										</div>
+										<!-- </div> -->
+									</div>
+								</div>
+							</div>
+
+							<div class="col-md-3 col-sm-6">
+								<div class="vertical-item content-absolute vertical-center content-bg-hover cs">
+									<div class="item-media">
+										<img src="{% static 'images/events/08.jpg' %}" alt="">
+										<div class="media-links">
+											<a class="abs-link" href="event-single-right.html"></a>
+										</div>
+									</div>
+									<div class="item-content">
+										<!-- <div> -->
+										<h3 class="margin_0">
+											Church Movie Fellowship
+										</h3>
+
+										<div class="cs hovered-content thin">
+											<div class="media small-teaser">
+												<div class="media-left">
+													<i class="fa fa-calendar grey fontsize_16"></i>
+												</div>
+												<div class="media-body">
+													Apr 30, 2017
+												</div>
+											</div>
+											<div class="media small-teaser">
+												<div class="media-left">
+													<i class="fa fa-map-marker grey fontsize_16"></i>
+												</div>
+												<div class="media-body">
+													London, UK
+												</div>
+											</div>
+											<div class="media small-teaser">
+												<div class="media-left">
+													<i class="fa fa-phone grey fontsize_16"></i>
+												</div>
+												<div class="media-body">
+													8 800 259 3489
+												</div>
+											</div>
+										</div>
+										<!-- </div> -->
+									</div>
+								</div>
+							</div>
+
+
+						</div>
+
+					</div>
+
+				</div>
+
+			</div>
+		</div>
+	</div>
+</section>
+<!--- End Of Activity Section ---------------------------------------------------------------------->
+
+
+<!--- Testimony Section -------------------------------------------------------------------------------->
+<section id="reviews" class="ls ms background_cover page_testimonials section_padding_100">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6 col-md-push-6">
+				<h3>Testimonies</h3>
+				<h2 class="section_header highlight to_animate animated pulse" data-animation="pulse"
+					data-delay="150"><a href="{% url 'home' %}">What They Say</a></h2>
+				<div class="owl-carousel topmargin_40" data-responsive-lg="1" data-responsive-md="1" data-responsive-sm="1" data-dots="true">
+
+					<blockquote class="with_quote bottommargin_0">
+						Ground round tenderloin alcatra, chicken landjaeger kevin short ribs ham hock pork chop. Bresaola capicola brisket shankle shank, strip steak burgdoggen. Pig tenderloin frankfurter porchetta.
+						<div class="item-meta">
+							<h5>
+								<a href="#">Simon Green</a>
+							</h5>
+							<p>Church Visitor</p>
+						</div>
+					</blockquote>
+
+					<blockquote class="with_quote bottommargin_0">
+						Ground round tenderloin alcatra, chicken landjaeger kevin short ribs ham hock pork chop. Bresaola capicola brisket shankle shank, strip steak burgdoggen. Pig tenderloin frankfurter porchetta.
+						<div class="item-meta">
+							<h5>
+								<a href="#">Simon Green</a>
+							</h5>
+							<p>Church Visitor</p>
+						</div>
+					</blockquote>
+
+					<blockquote class="with_quote bottommargin_0">
+						Ground round tenderloin alcatra, chicken landjaeger kevin short ribs ham hock pork chop. Bresaola capicola brisket shankle shank, strip steak burgdoggen. Pig tenderloin frankfurter porchetta.
+						<div class="item-meta">
+							<h5>
+								<a href="#">Simon Green</a>
+							</h5>
+							<p>Church Visitor</p>
+						</div>
+					</blockquote>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!--- End Of Testimony Section ------------------------------------------------------------------------------------------>
+
+
+<!--- Blog Section ------------------------------------------------------------------------------------------------------>
+<section id="blog" class="ls section_padding_top_100 section_padding_bottom_100">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12 text-center">
+				<h3>Latest News</h3>
+				<h3 class="section_header highlight to_animate animated pulse" data-animation="pulse"
+					data-delay="150"><a href="{% url 'blog' %}">From Our Blog</a></h3>
+			</div>
+		</div>
+		<div class="row topmargin_30">
+		{% for article in articles %}
+			<div class="col-sm-6">
+				<article class="vertical-item post format-standard with_background">
+					<div class="item-media entry-thumbnail">
+
+						<img src="{{article.image.url}}" alt="article Image">
+						<div class="media-links">
+							<a class="abs-link" title="" href="{{article.article_url}}"></a>
+						</div>
+					</div>
+
+					<div class="item-content entry-content">
+						<div class="with_padding">
+							<header class="entry-header">
+								<h3 class="entry-title highlight"><a href="{{article.article_url}}" rel="bookmark">{{ article.article_title }}</a></h3>
+							</header>
+							<!-- .entry-header -->
+
+								{% for key, value in dispaly_paragraph.items %}
+			            {% if key == article.id %}
+			              <p>{{ value }}</p>
+			            {% endif %}
+			          {% endfor %}
+			          <!-- <a class="btn btn-border light btn-round btn-small" href="{{ article.get_url }}">Read more</a> -->
+						</div>
+
+						<footer class="with_top_border entry-meta highlightlinks">
+							<div class="content-justify">
+								<span class="entry-date highlight">
+									<time class="entry-date" datetime="2017-03-13T08:50:40+00:00">
+										{{ article.created_date|date:"M" }} <span>{{ article.created_date|date:"d, Y" }}</span>
+									</time>
+								</span>
+								<a href="#">
+									<div class="blog-post-info capitalize highlight">
+				            <span><i class="fa fa-user"></i>
+				            By
+				            {% for author in article.article_author.all %}
+				                {% if not forloop.first %}, {% endif %}
+				                {{ author.full_name }}
+				            {% endfor %}
+				            </span>
+				            <span ><i class="fa fa-comments-o"></i> 15 Comments</span>
+				          </div>
+									<!-- <br/> -->
+
+								</a>
+							</div>
+						</footer>
+
+					</div>
+					<!-- .item-content.entry-content -->
+				</article>
+			</div>
+		{% endfor %}
+		</div>
+	</div>
+</section>
+<!--- End Of Blog Section ---------------------------------------------------------------------------------------------->
+
+		</div>
+		<!-- eof #box_wrapper -->
+	</div>
+	<!-- eof #canvas -->
+
+{% endblock %}
+
+<!-- footer -->
+{% include 'includes/footer.html' %}
+
+
+<script src="{% static 'js/compressed.js' %}" type="text/javascript"></script>
+<script src="{% static 'js/main.js' %}" type="text/javascript"></script>
+<!-- <script src="{% static 'js/switcher.js' %}" type="text/javascript"></script> -->
+
+</body>
+
+</html>

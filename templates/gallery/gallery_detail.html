@@ -1,0 +1,303 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<section class="page_breadcrumbs ds parallax section_padding_top_65 section_padding_bottom_65">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12 text-center">
+				<h2 class="highlight bold">Single Gallery</h2>
+				<ol class="breadcrumb o_animate animated pulse" data-animation="pulse"
+					data-delay="150">
+					<li><a href="{% url 'home' %}"><i class="fa fa-home"></i> Home</a>	</li>
+					<li><a href="{% url 'gallery' %}"><i class="fa fa-camera"></i> Gallery</a>	</li>
+					<li class="active"><i class="fa fa-camera-retro"></i> Single Gallery</li>
+				</ol>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="ls section_padding_top_75 section_padding_bottom_100">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-10 col-md-push-1 text-center">
+
+				<!-- <h1 class="gallery-single-title">	Image title	</h1> -->
+				<h3 class="section_header highlight"> {{ gallery_detail.image_name }}	</h3>
+
+				<div class="vertical-item gallery-extended-item content-padding with_background rounded">
+					<div class="item-media"><img src="{{ gallery_detail.image.url }}" alt="">	</div>
+					<div class="item-content text-center">
+						<!-- <h2 class="entry-excerpt"> {{ gallery_detail.image_name }}	</h2>
+						<h2 class="small-text highlight"> {{ gallery_detail.image_name }}	</h2> -->
+						<!-- <h3 class="section_header highlight"> {{ gallery_detail.image_name }}	</h3> -->
+
+					<!-- <p class="small-text highlight"> {{ gallery_detail.description }}	</p> -->
+					<h2 class="entry-excerpt"> {{ gallery_detail.description }}	</h2>
+
+			<div class="share-gallery-single">
+				<a href="#" class="social-icon color-bg-icon soc-facebook"></a>
+				<a href="#" class="social-icon color-bg-icon soc-twitter"></a>
+				<a href="#" class="social-icon color-bg-icon soc-google"></a>
+				<a href="#" class="social-icon color-bg-icon soc-linkedin"></a>
+				<a href="#" class="social-icon color-bg-icon soc-pinterest"></a>
+			</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="ls section_padding_100">
+	<div class="owl-carousel related-photos-carousel" data-margin="50" data-nav="true" data-loop="true" data-items="3">
+
+	{% for pic in gallery %}
+		<div>
+			<div class="vertical-item gallery-title-item content-absolute">
+				<div class="item-media">
+					<img src="{{ pic.image.url }}" alt="">
+					<div class="media-links">
+						<div class="links-wrap">
+							<a class="p-view prettyPhoto " title="" data-gal="prettyPhoto[gal]" href="{{ pic.image.url }}"></a>
+							<!-- <a class="p-link" title="" href="gallery-single.html"></a> -->
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="item-title text-center">
+				<h3><a href="{{ pic.pic_url }}">{{ pic.image_name }}</a></h3>
+			</div>
+		</div>
+	{% endfor %}
+
+		<!-- <div>
+			<div class="vertical-item gallery-title-item content-absolute">
+				<div class="item-media">
+					<img src="images/gallery/02.jpg" alt="">
+					<div class="media-links">
+						<div class="links-wrap">
+							<a class="p-view prettyPhoto " title="" data-gal="prettyPhoto[gal]" href="images/gallery/02.jpg"></a>
+							<a class="p-link" title="" href="gallery-single.html"></a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="item-title text-center">
+
+				<h3>
+					<a href="gallery-single.html">Elitr sed diam nonumy</a>
+				</h3>
+			</div>
+		</div>
+
+		<div>
+			<div class="vertical-item gallery-title-item content-absolute">
+				<div class="item-media">
+					<img src="images/gallery/03.jpg" alt="">
+					<div class="media-links">
+						<div class="links-wrap">
+							<a class="p-view prettyPhoto " title="" data-gal="prettyPhoto[gal]" href="images/gallery/03.jpg"></a>
+							<a class="p-link" title="" href="gallery-single.html"></a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="item-title text-center">
+
+				<h3>
+					<a href="gallery-single.html">Tempor invidunt ut labore</a>
+				</h3>
+			</div>
+		</div>
+
+		<div>
+			<div class="vertical-item gallery-title-item content-absolute">
+				<div class="item-media">
+					<img src="images/gallery/04.jpg" alt="">
+					<div class="media-links">
+						<div class="links-wrap">
+							<a class="p-view prettyPhoto " title="" data-gal="prettyPhoto[gal]" href="images/gallery/04.jpg"></a>
+							<a class="p-link" title="" href="gallery-single.html"></a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="item-title text-center">
+
+				<h3>
+					<a href="gallery-single.html">Elitr sed diam nonumy</a>
+				</h3>
+			</div>
+		</div>
+
+		<div>
+			<div class="vertical-item gallery-title-item content-absolute">
+				<div class="item-media">
+					<img src="images/gallery/05.jpg" alt="">
+					<div class="media-links">
+						<div class="links-wrap">
+							<a class="p-view prettyPhoto " title="" data-gal="prettyPhoto[gal]" href="images/gallery/05.jpg"></a>
+							<a class="p-link" title="" href="gallery-single.html"></a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="item-title text-center">
+
+				<h3>
+					<a href="gallery-single.html">Tempor invidunt ut labore</a>
+				</h3>
+			</div>
+		</div>
+
+		<div>
+			<div class="vertical-item gallery-title-item content-absolute">
+				<div class="item-media">
+					<img src="images/gallery/06.jpg" alt="">
+					<div class="media-links">
+						<div class="links-wrap">
+							<a class="p-view prettyPhoto " title="" data-gal="prettyPhoto[gal]" href="images/gallery/06.jpg"></a>
+							<a class="p-link" title="" href="gallery-single.html"></a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="item-title text-center">
+
+				<h3>
+					<a href="gallery-single.html">Elitr sed diam nonumy</a>
+				</h3>
+			</div>
+		</div>
+
+		<div>
+			<div class="vertical-item gallery-title-item content-absolute">
+				<div class="item-media">
+					<img src="images/gallery/07.jpg" alt="">
+					<div class="media-links">
+						<div class="links-wrap">
+							<a class="p-view prettyPhoto " title="" data-gal="prettyPhoto[gal]" href="images/gallery/07.jpg"></a>
+							<a class="p-link" title="" href="gallery-single.html"></a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="item-title text-center">
+
+				<h3>
+					<a href="gallery-single.html">Dolore magna aliquyam</a>
+				</h3>
+			</div>
+		</div>
+
+		<div>
+			<div class="vertical-item gallery-title-item content-absolute">
+				<div class="item-media">
+					<img src="images/gallery/08.jpg" alt="">
+					<div class="media-links">
+						<div class="links-wrap">
+							<a class="p-view prettyPhoto " title="" data-gal="prettyPhoto[gal]" href="images/gallery/08.jpg"></a>
+							<a class="p-link" title="" href="gallery-single.html"></a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="item-title text-center">
+
+				<h3>
+					<a href="gallery-single.html">Consetetur sadipscing</a>
+				</h3>
+			</div>
+		</div>
+
+		<div>
+			<div class="vertical-item gallery-title-item content-absolute">
+				<div class="item-media">
+					<img src="images/gallery/09.jpg" alt="">
+					<div class="media-links">
+						<div class="links-wrap">
+							<a class="p-view prettyPhoto " title="" data-gal="prettyPhoto[gal]" href="images/gallery/09.jpg"></a>
+							<a class="p-link" title="" href="gallery-single.html"></a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="item-title text-center">
+
+				<h3>
+					<a href="gallery-single.html">Elitr sed diam nonumy</a>
+				</h3>
+			</div>
+		</div>
+
+		<div>
+			<div class="vertical-item gallery-title-item content-absolute">
+				<div class="item-media">
+					<img src="images/gallery/10.jpg" alt="">
+					<div class="media-links">
+						<div class="links-wrap">
+							<a class="p-view prettyPhoto " title="" data-gal="prettyPhoto[gal]" href="images/gallery/10.jpg"></a>
+							<a class="p-link" title="" href="gallery-single.html"></a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="item-title text-center">
+
+				<h3>
+					<a href="gallery-single.html">Dolore magna aliquyam</a>
+				</h3>
+			</div>
+		</div>
+
+		<div>
+			<div class="vertical-item gallery-title-item content-absolute">
+				<div class="item-media">
+					<img src="images/gallery/11.jpg" alt="">
+					<div class="media-links">
+						<div class="links-wrap">
+							<a class="p-view prettyPhoto " title="" data-gal="prettyPhoto[gal]" href="images/gallery/11.jpg"></a>
+							<a class="p-link" title="" href="gallery-single.html"></a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="item-title text-center">
+
+				<h3>
+					<a href="gallery-single.html">Consetetur sadipscing</a>
+				</h3>
+			</div>
+		</div>
+
+		<div>
+			<div class="vertical-item gallery-title-item content-absolute">
+				<div class="item-media">
+					<img src="images/gallery/12.jpg" alt="">
+					<div class="media-links">
+						<div class="links-wrap">
+							<a class="p-view prettyPhoto " title="" data-gal="prettyPhoto[gal]" href="images/gallery/12.jpg"></a>
+							<a class="p-link" title="" href="gallery-single.html"></a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="item-title text-center">
+
+				<h3>
+					<a href="gallery-single.html">Dolore magna aliquyam</a>
+				</h3>
+			</div>
+		</div> -->
+
+
+	</div>
+
+
+</section>
+
+{% endblock %}

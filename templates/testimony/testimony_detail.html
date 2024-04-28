@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<section class="page_breadcrumbs ds parallax section_padding_top_65 section_padding_bottom_65">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12 text-center">
+  				<h2 class="highlight bold">Testimony Detail</h2>
+				<ol class="breadcrumb o_animate animated pulse" data-animation="pulse"
+					data-delay="150">
+					<li><a href="{% url 'home' %}"><i class="fa fa-home"></i> Home</a>	</li>
+						<li class="active"><a href="{% url 'testimony' %}"><i class="fa fa-child"></i> Testimonials</a></li>
+						<li class="active"><i class="fa fa-bullhorn"></i> Testimony Detail</li>
+				</ol>
+			</div>
+			</div>
+		</div>
+</section>
+
+<section class="ls section_padding_top_100 section_padding_bottom_100 columns_padding_25">
+	<div class="container">
+		<div class="row">
+
+			<div class="col-sm-7 col-md-8 col-lg-8">
+
+				<article class="single-post vertical-item with_background">
+					<div class="entry-thumbnail item-media">
+						<img  src="{{ testimony.testimony_image.url }}" alt="">
+					</div>
+					<div class="item-content">
+						<div class="with_padding">
+							<header class="entry-header">
+								<h1 class="entry-title highlight text-center">{{ testimony.testimony_title }}</h1>
+							</header>
+							<!-- .entry-header -->
+
+	          {% for testimony in testimony_paragraphs %}
+						<h4 class="entry-title  highlight text-left">{{ testimony.paragraph_header }}</h4>
+						<!-- paragragh image -->
+						<img class="alignleft" alt="" src="{{ testimony.paragraph_pic.url }}">
+
+	            <h5 class="less-mar3 text-justify">{{ testimony.paragraph_content}}</h5>
+
+	            <!-- <p>{{ phrase }}</p> -->
+
+	            <br/>
+	          {% endfor %}
+
+							<div class="entry-content">
+						<!-- <blockquote class="text-center with_quote"> -->
+							<!-- <div class="item-meta">
+								<h5 class="highlightlinks"><a href="#">Simon Green</a></h5>
+								<p>Church Visitor</p>	</div>	</blockquote> -->
+
+							</div>
+							<!-- .entry-content -->
+						</div>
+
+						<footer class="with_top_border entry-meta highlightlinks">
+							<div class="content-justify">
+								<span class="entry-date highlight">
+									<time class="entry-date" datetime="2017-03-13T08:50:40+00:00">
+										{{ article.created_date|date:"M" }} <span>{{ article.created_date|date:"d, Y" }}</span>
+									</time>
+								</span>
+									<div class="blog-post-info capitalize highlight">
+										<span><i class="fa fa-user"></i>
+										By
+										{% for author in article.article_author.all %}
+												{% if not forloop.first %}, {% endif %}
+												{{ author.full_name }}
+										{% endfor %}
+										</span>
+										<!-- <span ><i class="fa fa-comments-o"></i> 15 Comments</span> -->
+									</div>
+									<!-- <br/> -->
+							</div>
+						</footer>
+
+					</div>
+					<!-- .item-content -->
+
+				</article>
+
+			</div>
+			<!--eof .col-sm-8 (main content)-->
+
+			<!-- sidebar -->
+			<aside class="col-sm-5 col-md-4 col-lg-4">
+
+
+
+			</aside>
+			<!-- eof aside sidebar -->
+
+		</div>
+	</div>
+</section>
+
+{% endblock %}

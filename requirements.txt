@@ -1,0 +1,4 @@
+Color Code
+#1b468a #Dark Blue
+#ffffff #Plain White
+#323232 #Dark

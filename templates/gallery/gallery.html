@@ -1,0 +1,113 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<section class="page_breadcrumbs ds parallax section_padding_top_65 section_padding_bottom_65">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12 text-center">
+				<h2 class="highlight bold">Gallery</h2>
+				<ol class="breadcrumb to_animate animated pulse" data-animation="pulse"
+					data-delay="150">
+					<li><a href="{% url 'home' %}"><i class="fa fa-home"></i> Home</a>	</li>
+					<li class="active"><i class="fa fa-camera"></i> Gallery</li>
+				</ol>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="ls page_portfolio section_padding_top_100 section_padding_bottom_0 columns_padding_0">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-sm-12">
+
+				<!-- <div class="filters isotope_filters text-center">
+					<a href="#" data-filter="*" class="selected">All</a>
+					<a href="#" data-filter=".category1">Category 1</a>
+					<a href="#" data-filter=".category2">Category 2</a>
+					<a href="#" data-filter=".category3">Category 3</a>
+					<a href="#" data-filter=".category4">Category 4</a>
+				</div> -->
+
+				<div class="isotope_container isotope row masonry-layout" data-filters=".isotope_filters">
+				{% for pic in pictures %}
+					<div class="isotope-item col-lg-4 col-md-6 col-sm-6 category3">
+						<div class="vertical-item gallery-title-item content-absolute">
+							<div class="item-media">
+								<img src="{{ pic.image.url }}" alt="pic_1">
+								<div class="media-links">
+									<div class="links-wrap">
+										<a class="p-view prettyPhoto " title="" data-gal="prettyPhoto[gal]" href="{{ pic.image.url }}"></a>
+										<!-- <a class="p-link" title="" href="{{ pic.pic_url }}"></a> -->
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="item-title text-center">
+							<h3><a href="{{ pic.gallery_url }}">{{ pic.image_name }}</a></h3>
+						</div>
+					</div>
+					{% endfor %}
+
+						</div>
+					</div>
+
+				</div>
+				<!-- eof .isotope_container.row -->
+
+			</div>
+
+</section>
+
+ <!-- Set Up Pagination --------------------------------------------------->
+<section class="ls section_padding_bottom_100">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12 text-center">
+
+<nav aria-label="Page navigation example">
+	<ul class="pagination">
+{% if pictures.has_previous %}
+	<li class="page-item"><a class="page-link" href="{% url 'gallery' %}?page=1">&laquo FIRST</a></li>
+
+	<li class="page-item"><a class="page-link" href="{% url 'gallery' %}?page={{ pictures.previous_page_number }}">PREV</a></li>
+
+{% endif %}
+
+{% for i in nums %}
+
+		<li class="page-item "><a class="page-link"
+			href="{% url 'gallery' %}?page={{ forloop.counter }}">
+			{{ forloop.counter }}</a></li>
+
+{% endfor %}
+
+{% if pictures.has_next %}
+	<li class="page-item"><a class="page-link"
+		href="{% url 'gallery' %}?page={{ pictures.next_page_number }}">NEXT</a></li>
+
+	<li class="page-item"><a class="page-link" href="{% url 'gallery' %}?page={{ pictures.paginator.num_pages }}">LAST &raquo</a></li>
+
+{% endif %}
+</ul>
+</nav>
+
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- <section class="ls section_padding_bottom_100">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12 text-center">
+				<a href="#" class="theme_button color1 margin_0">Load More</a>
+			</div>
+		</div>
+	</div>
+
+</section> -->
+
+
+{% endblock %}

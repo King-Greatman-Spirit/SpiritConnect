@@ -1,0 +1,161 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<section class="page_breadcrumbs ds parallax section_padding_top_65 section_padding_bottom_65">
+	<div class="container">
+		 <div class="row">
+			<div class="col-sm-12 text-center">
+				<h2 class="highlight bold">Contact Us</h2>
+				<ol class="breadcrumb to_animate animated pulse" data-animation="pulse"
+					data-delay="150">
+				<li><a href="{% url 'home' %}"><i class="fa fa-home"></i> Home</a>	</li>
+					<li class="active">Contact Us</li>
+				</ol>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="ls section_padding_top_75 section_padding_bottom_100">
+	<div class="container">
+		<div class="row topmargin_60">
+			<div class="col-sm-12 to_animate">
+
+				<h3 class="section_header highlight" style="text-align:center;">Get In Touch</h3>
+				<p style="text-align:center;"><b>We are here to help and anwser any questions or requests you may have, we look forward to hearing from you.</b></p>
+
+				{% include 'includes/alerts.html' %}
+				<br/>
+				<form class="contact-form cs parallax columns_padding_5" method="POST" action="{% url 'contact' %}">
+					{% csrf_token %}
+					<div class="row">
+						<div class="col-sm-12">
+							<p><label for="{{ form.full_name.id_for_label }}"></label>
+							<i class="fa fa-user" style="color:#1b468a;"></i>
+							{{ form.full_name }}
+							{% for err in form.full_name.errors %}
+								<small class="text-danger">{{ err }}</small>
+							{% endfor %}	</p>
+						</div>
+
+						<div class="col-sm-12">
+							<p><label for="{{ form.email.id_for_label }}"></label>
+							<i class="fa fa-envelope" style="color:#1b468a;"></i>
+							{{ form.email }}
+							{% for err in form.email.errors %}
+								<small class="text-danger">{{ err }}</small>
+							{% endfor %} </p>
+						</div>
+
+						<div class="col-sm-12">
+							<p> <label for="job_title"></label>
+							<i class="fa fa-briefcase" style="color:#1b468a;"></i>
+							{{ form.job_title }} </p>
+						</div>
+
+						<div class="col-sm-12">
+							<p>	<label for="phone"></label>
+							<i class="fa fa-phone" style="color:#1b468a;"></i>
+							{{ form.phone }}</p>
+						</div>
+
+					<div class="col-sm-12">
+						<p> <label for="select"></label>
+						<i class="fa fa-bullhorn" style="color:#1b468a;"></i>
+						{{ form.channel }}	</p>
+					</div>
+
+					<div class="col-sm-12">
+						<p> <label for="subject"></label>
+						<i class="fa fa-pencil" style="color:#1b468a;"></i>
+						{{ form.subject }} </p>
+					</div>
+
+					<div class="col-sm-12">
+						<p>	<label for="message"></label>
+						<i class="fa fa-comments" style="color:#1b468a;"></i>
+						{{ form.message }} </p>
+					</div>
+
+					<div class="row">
+						<div class="col-sm-12">
+							<p class="contact-form-submit text-center topmargin_30">
+							<button type="submit" id="contact_form_submit" name="contact_submit" class="theme_button">Send Message</button>
+							<button type="reset" class="my_button">Cancel Message</button>
+							</p>
+						</div>
+
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+<section class="map-responsive mt-50 mb-100">
+	<!-- <div class="container"> -->
+		<div class="row">
+			<div class="col-12">
+
+	<div class="map-responsive">
+		<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15902.653563825956!2d6.984627!3d4.
+		8277348!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1069ce67a31e88d1%3A0xe7c935aebea2c471!2s13%20Nyenweli%2
+		0O.N.%20Nsirim%20Layout%2C%20Rumueme%20500272%2C%20Port%20Harcourt!5e0!3m2!1sen!2sng!4v1649069099720!5
+		m2!1sen!2sng" allowfullscreen></iframe>
+	</div>
+	</div>
+	<!-- </div> -->
+
+</section>
+
+<section class="ls section_padding_top_75 section_padding_bottom_100">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-4 to_animate" data-animation="pullDown">
+				<div class="teaser text-center">
+					<div class="teaser_icon highlight size_small">
+						<i class="rt-icon2-phone5"></i>
+					</div>
+					<p><span class="small-text highlight grey">Phone:</span> {{ church.phone_number }}<br>	</p>
+				</div>
+			</div>
+			<div class="col-sm-4 to_animate" data-animation="pullDown">
+				<div class="teaser text-center">
+					<div class="teaser_icon highlight size_small">
+						<i class="rt-icon2-location2"></i>
+					</div>
+
+					<p><span class="small-text highlight grey">Address:</span> {{ church.address_line_1 }}, {{ church.address_line_2 }}, {{ church.city }},
+						<strong>{{ church.state }}, {{ church.country }}.</strong><br />
+						<span class="small-text highlight grey">Postal Code:</span> {{ church.postal_code }} <br />
+		</p>
+
+				</div>
+			</div>
+			<div class="col-sm-4 to_animate" data-animation="pullDown">
+				<div class="teaser text-center">
+					<div class="teaser_icon highlight size_small">
+						<i class="rt-icon2-mail"></i>
+					</div>
+
+					<p><span class="small-text highlight grey">Email:</span> {{ church.email }}</p>
+					<p><span class="small-text highlight grey">Find Us On Social Media:</span>
+			<a href="#" class="social-icon color-icon soc-twitter"></a>
+			<a href="#" class="social-icon color-icon soc-facebook"></a>
+			<a href="#" class="social-icon color-icon soc-youtube"></a>
+			<a href="#" class="social-icon color-icon soc-instagram"></a>
+			<a href="#" class="social-icon color-icon soc-whatsapp"></a>
+		</p>
+
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<section class="page_breadcrumbs ds parallax section_padding_top_65 section_padding_bottom_65">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12 text-center">
+				<h2 class="highlight bold">Testimonials</h2>
+				<ol class="breadcrumb to_animate animated pulse" data-animation="pulse"
+					data-delay="150">
+					<li><a href="{% url 'home' %}"><i class="fa fa-home"></i> Home</a></li>
+					<li class="active"><i class="fa fa-child"></i> Testimonials</li>
+				</ol>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="ls page_portfolio section_padding_top_100 section_padding_bottom_75">
+
+	<div class="container">
+		<div class="row">
+				<div class="col-sm-12">
+
+				<h1 class="section_header highlight text-center">The Lord Is Good</h1>
+				{% for testimony in testimonies %}
+				<!-- <div class="owl-carousel topmargin_40" data-responsive-lg="1" data-responsive-md="1" data-responsive-sm="1" data-dots="true"> -->
+
+					<div class="isotope_container isotope row masonry-layout" data-filters=".isotope_filters">
+
+					<blockquote class="with_quote bottommargin_0 col-sm-3">
+						<a href="{{ testimony.testimony_url }}">Ground round tenderloin alcatra, chicken landjaeger kevin short ribs ham hock pork chop. Bresaola capicola brisket shankle shank, strip steak burgdoggen. Pig tenderloin frankfurter porchetta.</a>
+						<div class="item-meta highlight">
+							<h5>{{ testimony.testifier_name }}</h5>
+							<p>{{ testimony.city }}, {{ testimony.state }}, {{ testimony.country }}</p>
+						</div>
+					</blockquote>
+					{% endfor %}
+
+					<blockquote class="with_quote bottommargin_0 col-sm-3">
+					<a href="#">Ground round tenderloin alcatra, chicken landjaeger kevin short ribs ham hock pork chop. Bresaola capicola brisket shankle shank, strip steak burgdoggen. Pig tenderloin frankfurter porchetta.</a>
+					<div class="item-meta highlight">
+						<h5>Simon Green</h5>
+						<p>Church Visitor</p>
+					</div>
+					</blockquote>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+{% endblock %}
