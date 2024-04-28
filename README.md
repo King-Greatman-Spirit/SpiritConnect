@@ -68,5 +68,3 @@ To set up the Spirit Connect project on your local machine, follow these simple 
 
 Feel free to explore, contribute, and make Spirit Connect your digital sanctuary for spiritual growth and community connection! 🌟🙏🚀
 ```
-
-This README.md content provides an overview of Spirit Connect, installation instructions, and details about the technologies used in the project. Feel free to customize it further to suit your preferences!
